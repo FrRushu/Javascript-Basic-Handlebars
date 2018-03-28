@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="utf-8">
+	<title> Handlebar 01 </title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+            <script id="character-template" type="text/x-handlebars-template ">
+               {{#each characters}}
+               <li class="character">
+               <img src="img/{{shortcode}}.jpg" alt="">
+               <h2>{{@index}} {{name}}</h2>
+               <p>Actor: {{actor}}</p>
+               <p>House: {{house}}</p>
+<!--               {{#if location}}<p>Whereabouts: {{location}}</p>{{/if}}-->
+<!--               <p>Whereabouts: {{#if location}}{{location}}{{else}}unknown{{/if}}</p>-->
+               <p>Whereabouts: {{#if location}}{{location}}{{else if house}}{{house}}{{else}}unknown{{/if}}</p>
+            </li>
+            {{/each}}
+            </script>
+</head><!-- builtin each halper in handlebars -->
+
+	<body>
+		
+		<h1>Game of Thrones</h1>
+		
+		<ul class="character-list-container">
+           
+           
+            
+		</ul>
+
+		<script src="js/jquery-1.7.1.js"></script>
+    	<script src="js/script.js"></script>
+	</body>
+
+</html>
